@@ -1,0 +1,927 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@500&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Figtree', Arial, sans-serif;
+}
+/* Root variables */
+ :root {
+     --bg-color-dark: #1C3F3A;
+    ;
+     --text-color-dark: #fff;
+     --bg-color-light: #f2f2f2;
+     --text-color-light: #333333;
+     --green-color: #2ecc71;
+    /* Green color for accents */
+     --light-green : #E3F488;
+}
+/* Dark theme by default */
+ body {
+     background-color: var(--bg-color-dark);
+     color: var(--text-color-dark);
+     transition: background-color 0.5s, color 0.5s;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+/* Theme switch button at the top */
+ .theme-switch-top {
+     position: fixed;
+     top: 10px;
+     right: 10px;
+     z-index: 9999;
+}
+ .theme-switch-top #themeToggle {
+     background-color: var(--light-green);
+    /* Green theme switch button */
+     color: var(--bg-color-dark);
+     border: none;
+     padding: 10px;
+     border-radius: 50%;
+     cursor: pointer;
+     transition: background-color 0.3s;
+}
+ .theme-switch-top #themeToggle:hover {
+     background-color: var(--bg-color-dark);
+     color: #E3F488;
+}
+/* Light theme */
+ body.light-theme {
+     background-color: var(--bg-color-light);
+     color: var(--text-color-light);
+}
+ .light-theme #container {
+     background-color: var(--bg-color-light);
+}
+ .Intro {
+     text-align: center;
+    /* Center-align content */
+     padding: 20px;
+    /*  padding around content */
+     margin: 20px;
+    /*  margin around content */
+}
+ .Intro h1 {
+     font-size: 60px;
+    /* Adjust font size */
+     color: var(--bg-color-light);
+    /* Set font color */
+     margin-bottom: 10px;
+    /* Add spacing below heading */
+}
+ .Intro p {
+     font-size: 24px;
+    /* Adjust font size */
+     color: var(--text-color-dark);
+    /* Set font color */
+     margin-bottom: 15px;
+    /* Add spacing below paragraphs */
+}
+ .Intro p a{
+     font-size: 24px;
+    /* Adjust font size */
+     color: #fff;
+    /* Set font color */
+}
+/* Code Container */
+ .code-container {
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     margin-bottom: 30px;
+     overflow: hidden;
+     width: 900px;
+     margin: 0 auto;
+    /* this line to center horizontally */
+}
+/* Code Header */
+ .code-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px;
+     background-color: var(--light-green);
+     cursor: pointer;
+     color: #1C3F3A;
+}
+ .code-header p {
+     font-size: 28px;
+     color: #1C3F3A;
+}
+/* Expand Icon */
+ .expand-icon {
+     font-size: 1.2em;
+     transition: transform 0.3s ease;
+}
+/* Code Content */
+ .code-content {
+     display: none;
+}
+/* Code Block */
+ pre {
+     background-color: var(--bg-color-light);
+     color: var(--bg-color-dark);
+     padding: 10px;
+     margin: 0;
+     border-radius: 0 0 5px 5px;
+     overflow-x: auto;
+}
+ code {
+     font-family: "Courier New", Courier, monospace;
+}
+/* Copy Button */
+ .copy-button {
+     background-color: #4CAF50;
+     color: white;
+     border: none;
+     padding: 5px 10px;
+     border-radius: 3px;
+     cursor: pointer;
+     margin-top: 10px;
+}
+ .copy-button:hover {
+     background-color: #45a049;
+}
+ .alert-success {
+     background-color: #4CAF50;
+    /* Green */
+     color: white;
+     padding: 10px;
+     border-radius: 5px;
+     margin-top: 30px;
+     display: none;
+    /* Initially hidden */
+     width: 800px;
+    /* Center horizontally */
+     position: absolute;
+     top: 2%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+/* Style for error alert */
+ .alert-error {
+     background-color: #f44336;
+    /* Red */
+     color: white;
+     padding: 10px;
+     border-radius: 5px;
+     margin-top: 30px;
+     display: none;
+    /* Initially hidden */
+}
+/* Show Code Content */
+ .show-content .expand-icon {
+     transform: rotate(90deg);
+}
+ .show-content .code-content {
+     display: block;
+}
+ .light-theme .Intro h1 {
+     font-size: 60px;
+    /* Adjust font size */
+     color: var(--text-color-light);
+    /* Set font color */
+     margin-bottom: 10px;
+    /* Add spacing below heading */
+}
+ .light-theme .Intro p {
+     font-size: 24px;
+    /* Adjust font size */
+     color: var(--text-color-light);
+    /* Set font color */
+     margin-bottom: 15px;
+    /* Add spacing below paragraphs */
+}
+ .light-theme .Intro p a{
+     font-size: 24px;
+    /* Adjust font size */
+     color: var(--text-color-light);
+    /* Set font color */
+}
+ .Intro img {
+     display: block;
+    /* Center image */
+     margin: 0 auto;
+     width: 30%;
+    /* Adjusted width of the image */
+     height: 30%;
+}
+ #climate{
+     margin: 40px;
+}
+ #climate h2{
+     font-size: 30px;
+}
+ #seoPerformance{
+     margin-top: 40px;
+}
+ #seoPerformance h2{
+     font-size: 30px;
+     margin-left: 20px;
+}
+/* Main container */
+ #container {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding: 20px;
+}
+/* Carbon calculator container */
+ #carbonCalculator {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+     gap: 20px;
+     max-width: 1200px;
+     margin: 20px auto;
+     max-height: 30%;
+}
+ .cleaner-than{
+     font-size: 48px;
+    /* Larger font size for the rating */
+     margin-bottom: 20px;
+     color: var(--bg-color-dark);
+     font-weight: bolder;
+}
+ .page-emission{
+     font-size: 48px;
+    /* Larger font size for the rating */
+     margin-bottom: 20px;
+     color: var(--bg-color-dark);
+     font-weight: bolder;
+}
+ .page-weight{
+     font-size: 48px;
+    /* Larger font size for the rating */
+     margin-bottom: 20px;
+     color: var(--bg-color-dark);
+     font-weight: bolder;
+}
+ .light-theme .cleaner-than{
+     font-size: 48px;
+    /* Larger font size for the rating */
+     margin-bottom: 20px;
+     color: var(--text-color-light);
+     font-weight: bolder;
+}
+ .light-theme .page-emission{
+     font-size: 48px;
+    /* Larger font size for the rating */
+     margin-bottom: 20px;
+     color: var(--text-color-light);
+     font-weight: bolder;
+}
+ .light-theme .page-weight{
+     font-size: 48px;
+    /* Larger font size for the rating */
+     margin-bottom: 20px;
+     color: var(--text-color-light);
+     font-weight: bolder;
+}
+ .light-theme .rating-tile .rating {
+     font-size: 48px;
+    /* Larger font size for the rating */
+     text-align: center;
+    /* Center align the rating */
+     margin-bottom: 20px;
+     color: #3d3c3c;
+}
+ .rating-tile p {
+     font-size: 16px;
+     margin-bottom: 8px;
+     color: var(--text-color-dark);
+    /* Dark text color */
+     text-align: center;
+    /* Center align the text */
+}
+/* Carbon calculator tile styles */
+ .light-theme .tile {
+     background-color: var(--bg-color-light);
+     border-radius: 10px;
+     padding: 20px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     border: 2px solid var(--bg-color-dark);
+    /* Add border */
+}
+ .tile {
+     background-color: var(--bg-color-light);
+     border-radius: 10px;
+     padding: 20px;
+     box-shadow: 0 4px 8px rgba(169, 27, 27, 0.1);
+     border: 2px solid #fff;
+    /* Add border */
+}
+ .light-theme .tile h2 {
+     font-size: 18px;
+     margin-bottom: 10px;
+     color: var(--bg-color-dark);
+}
+ .light-theme .tile p {
+     font-size: 16px;
+     margin-bottom: 8px;
+     color: var(--bg-color-dark);
+}
+ .tile h2 {
+     font-size: 18px;
+     margin-bottom: 10px;
+     color: var(--bg-color-dark);
+    /* Dark text color */
+}
+ .tile h2 a {
+     text-decoration: none;
+     color: var(--bg-color-dark);
+    /* Dark text color */
+}
+ .tile p {
+     font-size: 16px;
+     margin-bottom: 8px;
+     color: var(--bg-color-dark);
+}
+/* Hover effect */
+ .light-theme .tile:hover {
+     background-color: #f0f0f0;
+     transform: translateY(-2px);
+     transition: background-color 0.3s, transform 0.3s;
+     border-color: #ccc;
+    /* Adjust border color on hover */
+}
+/* .tile:hover {
+     background-color: var(--bg-color-dark);
+     transform: translateY(-2px);
+     transition: background-color 0.3s, transform 0.3s;
+     border-color: #999;
+    /* Adjust border color on hover 
+}
+ */
+/* Rating bar */
+ .rating-bar {
+     background-color: #fff;
+     border-radius: 5px;
+     height: 10px;
+}
+ .circular-progress {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     background: conic-gradient( #2ecc71 0% var(--progress), #3d3c3c var(--progress) 100% );
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+     position: relative;
+}
+ .progress-label {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 100%;
+     text-align: center;
+     color: #fff;
+}
+ .circular-container {
+     display: flex;
+     justify-content: space-around;
+     margin-top: 20px;
+}
+ .circular-detail {
+     width: 150px;
+     height: 150px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+/* Container styles */
+ .container {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 10px;
+     min-height: 400px;
+     width: 100%;
+     max-width: 1200px;
+    /* min-width: 1200px;
+     */
+     margin: auto;
+     align-items: center;
+     justify-content: center;
+}
+/* Circular progress styles */
+ .circular-progress {
+     position: relative;
+     height: 250px;
+     width: 250px;
+     border-radius: 50%;
+     display: grid;
+     place-items: center;
+}
+ .circular-progress:before {
+     content: "";
+     position: absolute;
+     height: 84%;
+     width: 84%;
+     background-color: #ffffff;
+     border-radius: 50%;
+}
+ .value-container {
+     position: relative;
+     font-size: 50px;
+     text-align: center;
+}
+/* Conditional color styles */
+ .value-container.less-than-50 {
+     color: #e74c3c;
+    /* Red color for score less than 50 */
+}
+ .value-container.above-50 {
+     color: #f39c12;
+    /* Orange color for score above 50 */
+}
+ .value-container.above-90 {
+     color: #2ecc71;
+    /* Green color for score above 90 */
+}
+ #seo{
+     width: 90vw;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-left: 20px;
+}
+ .circular-container {
+     width: 70%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 50px;
+}
+ .circular-container p {
+     font-size: 24px;
+    /* Adjust font size */
+     color: #fff;
+    /* Adjust text color */
+     margin-top: 20px;
+    /* Adjust spacing */
+     font-weight: bolder;
+     align-content: center;
+}
+ .light-theme .circular-container p {
+     font-size: 24px;
+    /* Adjust font size */
+     color: var(--text-color-light);
+    /* Adjust text color */
+     margin-top: 20px;
+    /* Adjust spacing */
+     font-weight: bolder;
+     align-content: center;
+}
+/* Custom CSS for the table */
+ table {
+     width: 85%;
+     border-collapse: collapse;
+     margin: auto;
+}
+ th, td {
+     padding: 12px;
+     text-align: left;
+     border-bottom: 1px solid var(--text-color-dark);
+     border-left: 1px solid var(--text-color-dark);
+     border-right: 1px solid var(--text-color-dark);
+}
+ th {
+     background-color: var(--bg-color-light);
+    /* Light gray background for headings */
+     color: var(--bg-color-dark);
+     font-weight: bold;
+}
+ .light-theme th {
+     background-color: var(--text-color-light);
+    /* Light gray background for headings */
+     font-weight: bold;
+     color: white;
+}
+ .metric-name {
+     font-weight: bold;
+}
+ .metric-value {
+     font-style: italic;
+}
+/* Responsive styles */
+ @media only screen and (max-width: 768px) {
+     th, td {
+         padding: 8px;
+    }
+}
+ @media only screen and (max-width: 576px) {
+     th, td {
+         padding: 6px;
+         font-size: 14px;
+    }
+     .metric-name {
+         font-size: 16px;
+    }
+     .metric-value {
+         font-size: 14px;
+    }
+}
+ #more-resources{
+     margin: 50px;
+     text-align: center;
+}
+ #more-resources h2{
+     font-size: 30px;
+}
+ .card-list {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+     max-width: 1250px;
+     margin: 50px auto;
+     gap: 20px;
+}
+ .card-list .card-item {
+     background: #fff;
+     padding: 26px;
+     border-radius: 8px;
+     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+     list-style: none;
+     cursor: pointer;
+     text-decoration: none;
+     border: 2px solid transparent;
+     transition: border 0.5s ease;
+     text-align: center;
+    /* Center align text */
+}
+ .card-list .card-item:hover {
+     border: 2px solid #000;
+}
+ .card-list .card-item img {
+     width: 100%;
+     aspect-ratio: 16/9;
+     border-radius: 8px;
+     object-fit: cover;
+     margin-bottom: 10px;
+    /* Add space between image and text */
+}
+ .card-item h3 {
+     color: #000;
+     font-size: 16px;
+     margin-top: 10px;
+    /* Adjust top margin */
+     font-weight: 600;
+}
+/* "Calculate your emissions!" Section */
+ .calculate-emissions {
+     background-color: var(--bg-color-dark);
+    /* Background color from https://www.imagecarbon.com/ */
+     padding: 100px 32px;
+    /* Increased padding */
+     text-align: center;
+}
+ .calculate-emissions h2 {
+     margin-bottom: 20px;
+     font-size: 60px;
+    /* Increased font size */
+     line-height: 40px;
+    /* Line spacing for the heading */
+}
+ .calculate-emissions p {
+     font-size: 28px;
+    /* Increased font size */
+     margin-top: 20px;
+     line-height: 40px;
+    /* Line spacing for the paragraph */
+     font-weight: 100;
+}
+ .calculate-emissions .website-form input[type="text"] {
+     margin-top: 30px;
+     padding: 10px;
+     width: 50%;
+}
+ .calculate-emissions .website-form button {
+     padding: 10px 20px;
+     background-color: #4CAF50;
+     color: white;
+     border: none;
+     cursor: pointer;
+}
+/* "Calculate your emissions!" Section */
+ .light-theme .calculate-emissions {
+     background-color: var(--bg-color-light);
+     padding: 100px 32px;
+    /* Increased padding */
+     text-align: center;
+}
+ .light-theme .calculate-emissions h2 {
+     margin-bottom: 20px;
+     font-size: 60px;
+    /* Increased font size */
+     line-height: 40px;
+    /* Line spacing for the heading */
+     color: var(--text-color-light);
+}
+ .light-theme .calculate-emissions p {
+     font-size: 28px;
+    /* Increased font size */
+     margin-top: 20px;
+     line-height: 40px;
+    /* Line spacing for the paragraph */
+     font-weight: 100;
+     color: var(--text-color-light);
+}
+ .light-theme .calculate-emissions .website-form input[type="text"] {
+     margin-top: 30px;
+     padding: 10px;
+     width: 50%;
+}
+ .light-theme .calculate-emissions .website-form button {
+     padding: 10px 20px;
+     background-color: #4CAF50;
+     color: white;
+     border: none;
+     cursor: pointer;
+}
+/* Default styles */
+ @media screen and (max-width: 768px) {
+     .Intro h1 {
+         font-size: 40px;
+    }
+     .Intro p {
+         font-size: 18px;
+    }
+     .Intro img {
+         width: 100%;
+         height: auto;
+    }
+     .container {
+         grid-template-columns: repeat(2, 1fr);
+    }
+     .metric {
+         width: 100%;
+    }
+     .card-list {
+         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+     .calculate-emissions h2 {
+         font-size: 40px;
+    }
+     .calculate-emissions p {
+         font-size: 20px;
+    }
+     .calculate-emissions.website-form input[type="text"] {
+         width: 100%;
+    }
+     .matrics-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+        /* Distribute space between metrics */
+         margin-top: 50px;
+         max-width: 1200px;
+        /* Set a maximum width for the container */
+         padding: 20px;
+        /* Add padding for spacing */
+         box-sizing: border-box;
+        /* Include padding in width */
+         text-align: center;
+        /* Center align text */
+         margin-left: 40px;
+    }
+     .calculate-emissions {
+         background-color: #222;
+         padding: 50px 20px;
+        /* Adjusted padding for smaller screens */
+         text-align: center;
+    }
+     .calculate-emissions h2 {
+         margin-bottom: 20px;
+         font-size: 48px;
+        /* Adjusted font size for smaller screens */
+         line-height: 1.2;
+        /* Adjusted line spacing for smaller screens */
+    }
+     .calculate-emissions p {
+         font-size: 24px;
+        /* Adjusted font size for smaller screens */
+         margin-top: 20px;
+         line-height: 1.5;
+        /* Adjusted line spacing for smaller screens */
+         font-weight: 100;
+    }
+     .calculate-emissions .website-form {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin-top: 30px;
+    }
+     .calculate-emissions .website-form input[type="text"] {
+         flex-basis: 100%;
+        /* Full-width input field for smaller screens */
+         margin-bottom: 20px;
+         padding: 10px;
+         font-size: 18px;
+        /* Adjusted font size for smaller screens */
+    }
+     .calculate-emissions .website-form button {
+         flex-basis: 100%;
+        /* Full-width button for smaller screens */
+         padding: 10px 20px;
+         background-color: #4CAF50;
+         color: white;
+         border: none;
+         cursor: pointer;
+         font-size: 24px;
+        /* Adjusted font size for smaller screens */
+    }
+     @media screen and (min-width: 768px) {
+         .calculate-emissions {
+             padding: 100px 32px;
+            /* Increased padding for larger screens */
+        }
+         .calculate-emissions h2 {
+             font-size: 60px;
+            /* Increased font size for larger screens */
+             line-height: 1.3;
+            /* Adjusted line spacing for larger screens */
+        }
+         .calculate-emissions p {
+             font-size: 28px;
+            /* Increased font size for larger screens */
+             line-height: 1.5;
+            /* Adjusted line spacing for larger screens */
+        }
+         .calculate-emissions .website-form input[type="text"] {
+             width: 50%;
+            /* Half-width input field for larger screens */
+             margin-bottom: 0;
+        }
+         .calculate-emissions .website-form button {
+             width: 50%;
+            /* Half-width button for larger screens */
+             margin-bottom: 0;
+        }
+    }
+     #carbonCalculator, .container {
+         grid-column: 1 / -1;
+        /* Make them span the full width of the container */
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin-top: 40px;
+    }
+     #carbonCalculator h2 {
+         font-size: 30px;
+         margin-bottom: 20px;
+    }
+     .container h2 {
+         font-size: 30px;
+         margin-bottom: 20px;
+         margin-left: 0;
+        /* Remove the left margin */
+    }
+     #seoPerformance h2{
+         margin-left: 50px;
+    }
+}
+ @media screen and (max-width: 480px) {
+     .Intro h1 {
+         font-size: 32px;
+    }
+     .Intro p {
+         font-size: 16px;
+    }
+     .Intro img {
+         width: 100%;
+         height: auto;
+    }
+     .container {
+         grid-template-columns: 1fr;
+    }
+     .metric {
+         width: 100%;
+    }
+     .card-list {
+         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+     .calculate-emissions h2 {
+         font-size: 32px;
+    }
+     .calculate-emissions p {
+         font-size: 18px;
+    }
+     .calculate-emissions.website-form input[type="text"] {
+         width: 100%;
+    }
+     #carbonCalculator, .container {
+         grid-column: 1 / -1;
+        /* Make them span the full width of the container */
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin-top: 40px;
+    }
+     #carbonCalculator h2 {
+         font-size: 30px;
+         margin-bottom: 20px;
+    }
+     .container h2 {
+         font-size: 30px;
+         margin-bottom: 20px;
+         margin-left: 0;
+        /* Remove the left margin */
+    }
+     .matrics-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+        /* Distribute space between metrics */
+         margin-top: 50px;
+         max-width: 1200px;
+        /* Set a maximum width for the container */
+         padding: 20px;
+        /* Add padding for spacing */
+         box-sizing: border-box;
+        /* Include padding in width */
+         text-align: center;
+        /* Center align text */
+         margin-left: 40px;
+    }
+     #seoPerformance h2{
+         margin-left: 50px;
+    }
+     .calculate-emissions {
+         background-color: var(--bg-color-dark);
+         padding: 50px 20px;
+        /* Adjusted padding for smaller screens */
+         text-align: center;
+    }
+     .calculate-emissions h2 {
+         margin-bottom: 20px;
+         font-size: 48px;
+        /* Adjusted font size for smaller screens */
+         line-height: 1.2;
+        /* Adjusted line spacing for smaller screens */
+    }
+     .calculate-emissions p {
+         font-size: 24px;
+        /* Adjusted font size for smaller screens */
+         margin-top: 20px;
+         line-height: 1.5;
+        /* Adjusted line spacing for smaller screens */
+         font-weight: 100;
+    }
+     .calculate-emissions .website-form {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin-top: 30px;
+    }
+     .calculate-emissions .website-form input[type="text"] {
+         flex-basis: 100%;
+        /* Full-width input field for smaller screens */
+         margin-bottom: 20px;
+         padding: 10px;
+         font-size: 18px;
+        /* Adjusted font size for smaller screens */
+    }
+     .calculate-emissions .website-form button {
+         flex-basis: 100%;
+        /* Full-width button for smaller screens */
+         padding: 10px 20px;
+         background-color: #4CAF50;
+         color: white;
+         border: none;
+         cursor: pointer;
+         font-size: 24px;
+        /* Adjusted font size for smaller screens */
+    }
+     @media screen and (min-width: 768px) {
+         .calculate-emissions {
+             padding: 100px 32px;
+            /* Increased padding for larger screens */
+        }
+         .calculate-emissions h2 {
+             font-size: 60px;
+            /* Increased font size for larger screens */
+             line-height: 1.3;
+            /* Adjusted line spacing for larger screens */
+        }
+         .calculate-emissions p {
+             font-size: 28px;
+            /* Increased font size for larger screens */
+             line-height: 1.5;
+            /* Adjusted line spacing for larger screens */
+        }
+         .calculate-emissions .website-form input[type="text"] {
+             width: 50%;
+            /* Half-width input field for larger screens */
+             margin-bottom: 0;
+        }
+         .calculate-emissions .website-form button {
+             width: 50%;
+            /* Half-width button for larger screens */
+             margin-bottom: 0;
+        }
+    }
+}

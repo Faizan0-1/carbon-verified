@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style/report.css">
+      <link rel="shortcut icon" href="/Images/Icon - Colour.png" sizes="32x32" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <title>Performance Report</title>
+   </head>
+
+   <body class="dark-theme">
+   <!-- Container for the entire content -->
+      <div id="container">
+         <div class="theme-switch-top">
+            <button id="themeToggle">
+            <i class="fas fa-adjust"></i>
+            </button>
+         </div>
+
+   <!-- Display performance report if data is available -->
+         <% if (locals.list) { %>
+         <div class="Intro">
+            <h1>Your Webpage Score <%= locals.list.rating %> Grade </h1>
+            <% if (locals.list.rating === 'A' || locals.list.rating === 'A+') { %>
+            <div class="code-container">
+               <div class="code-header">
+                  <p>Congratulations! Click the icon to see your badge code:</p>
+                  <span class="expand-icon">▶</span>
+               </div>
+            
+   <!-- Badge code display for A and A+ grades -->
+               <div class="code-content">
+                  <pre><code>&lt;img src="https://carbonverified.org/Images/badge.png" alt="Badge Image" width="200" height="200"&gt;</code></pre>
+                  <button class="copy-button" onclick="codeCopy()">Copy</button>
+               </div>
+            </div>
+
+            <div class="alert-success">Code copied to clipboard!</div>
+            <div class="alert-error">Unable to copy code. Please try again.</div>
+            <% } %>
+            <p>But your website still produced <%= (locals.list.webCO2).toFixed(2) %> g of carbon. </p>
+            <p>Estimated using the <a href="https://sustainablewebdesign.org/digital-carbon-ratings/" target="_blank">Sustainable Web Design model.</a>
+            </p>
+
+    <!-- Display badge based on rating -->
+            <% switch (locals.list.rating) {
+               case 'A+' : %>
+            <img src="Images/Badge - A.png" alt="" srcset="">
+            <% break;
+               case 'A' : %>
+            <img src="Images/Badge - A.png" alt="" srcset="">
+            <% break;
+               case 'B' : %>
+            <img src="Images/Badge - B.png" alt="" srcset="">
+            <% break;
+               case 'C' : %>
+            <img src="Images/Badge - C.png" alt="" srcset="">
+            <% break;
+               case 'D' : %>
+            <img src="Images/Badge - D.png" alt="" srcset="">
+            <% break;
+               case 'F' : %>
+            <img src="Images/Badge - F.png" alt="" srcset="">
+            <% break;
+               } %>
+         </div>
+
+    <!-- Climate impact section -->
+         <section id="climate">
+            <h2>Climate Impact</h2>
+            <div id="carbonCalculator" class="carbon-calculator">
+               <!-- Cleaner Than Tile -->
+               <div class="tile">
+                  <h2>Carbon Rating</h2>
+                  <div class="cleaner-than"><%= locals.list.rating %> </div>
+                  <p>Digital carbon rating system gives this URL a “ <%= locals.list.rating %> ” on a scale of A to F. </p>
+               </div>
+               <!-- Page Emission Tile -->
+               <div class="tile">
+                  <h2>Page Emissions</h2>
+                  <div class="page-emission"><%= (locals.list.webCO2).toFixed(2) %> g </div>
+                  <p>Assuming your page gets 1000 pageviews, you’re emitting <%= (locals.list.webCO2).toFixed(2) %> of carbon dioxide. </p>
+               </div>
+               <!-- Page Weight Tile -->
+               <div class="tile">
+                  <h2>Page Weight</h2>
+                  <div class="page-weight"><%= locals.list.pageweight %> KB </div>
+                  <p>This website's page weight is <%= locals.list.pageweight %> kilobytes. </p>
+               </div>
+            </div>
+         </section>
+         <% } %>  <!-- Ending If of type list -->
+ 
+   <!-- Display SEO performance data if available -->
+         <% if (locals.seo) { %>
+         <section id="seoPerformance" class="animate-section">
+            <h2>Seo Optimization</h2>
+            <!-- Circular Progress Bars -->
+            <div id="seo" class="container">
+               <div class="circular-container">
+                  <div class="circular-progress seo-performance" data-end-value="<%= seo.seoPerformance %>">
+                     <div class="value-container">0%</div>
+                  </div>
+                  <p>SEO Performance</p>
+               </div>
+               <div class="circular-container">
+                  <div class="circular-progress best-practices" data-end-value="<%= seo.bestPractices %>">
+                     <div class="value-container">0%</div>
+                  </div>
+                  <p>Best Practices</p>
+               </div>
+               <div class="circular-container">
+                  <div class="circular-progress seo-score" data-end-value="<%= seo.seoScore %>">
+                     <div class="value-container">0%</div>
+                  </div>
+                  <p>SEO Score</p>
+               </div>
+            </div>
+      </div>
+
+    <!-- Table to display SEO metrics -->
+      <table>
+      <tr>
+      <th>Metric</th>
+      <th>Value</th>
+      </tr>
+      <tr>
+      <td class="metric-name">First Contentful Paint (FCP):</td>
+      <td class="metric-value"><%= (seo.fcp).toFixed(2)%>s</td>
+      </tr>
+      <tr>
+      <td class="metric-name">Speed Index (SI):</td>
+      <td class="metric-value"><%= (seo.si).toFixed(2)%>s</td>
+      </tr>
+      <tr>
+      <td class="metric-name">Largest Contentful Paint (LCP):</td>
+      <td class="metric-value"><%= (seo.lcp).toFixed(2)%>s</td>
+      </tr>
+      <tr>
+      <td class="metric-name">Time to Interactive (TTI):</td>
+      <td class="metric-value"><%= (seo.tti).toFixed(2)%>s</td>
+      </tr>
+      <tr>
+      <td class="metric-name">Total Blocking Time (TBT):</td>
+      <td class="metric-value"><%= (seo.tbt).toFixed(2)%>s</td>
+      </tr>
+      <tr>
+      <td class="metric-name">Cumulative Layout Shift (CLS):</td>
+      <td class="metric-value"><%= (seo.cls).toFixed(2)%>s</td>
+      </tr>
+      </table>
+      </section>
+      <% } %>  <!-- Ending if of type seo -->
+
+
+   <!-- More resources section -->
+      <section id="more-resources">
+         <h2>More Resources To Learn</h2>
+         <div class="card-list">
+            <a href="https://www.thegreenwebfoundation.org/" class="card-item" target="_blank">
+               <img src="https://res.cloudinary.com/colbycloud-apps/image/upload/c_limit,w_800/f_auto/q_auto/v1/imagecarbon-assets/green-web-foundation_guapln?_a=AVAEwDV0" alt="Card Image">
+               <h3>Towards a fossil free internet by 2030</h3>
+            </a>
+            <a href="https://almanac.httparchive.org/en/2022/sustainability#evaluating-the-environmental-impact-of-websites" class="card-item" target="_blank">
+               <img src="https://res.cloudinary.com/colbycloud-apps/image/upload/c_limit,w_800/f_auto/q_auto/v1/imagecarbon-assets/http-archive-sustainability_ynumgy?_a=AVAEwDV0" alt="Card Image">
+               <h3>Environmental impact of websites</h3>
+            </a>
+            <a href="https://cloudinary.com/state-of-visual-media-report?going-green&utm_source=imagecarbon.com&utm_medium=referral&utm_campaign=devx_imagecarbon&utm_content=stateofvisualmedia" class="card-item" target="_blank">
+               <img src="https://res.cloudinary.com/colbycloud-apps/image/upload/c_limit,w_800/f_auto/q_auto/v1/imagecarbon-assets/state-of-visual-media_zrpykz?_a=AVAEwDV0" alt="Card Image">
+               <h3>Going Green with Image and Video Optimization</h3>
+            </a>
+         </div>
+         </div>
+
+   <!-- calculate emissions for another website -->      
+      </section>
+      <section class="calculate-emissions">
+         <div class="econtainer">
+            <h2>Check another website!</h2>
+            <p>Whether it's another page or a whole new site</p>
+            <form action="/generateReport" method="post" class="website-form" id="website-form-id2">
+               <input type="text" name="URLSearch" id="website-url" placeholder="Enter your website URL">
+               <button type="submit">Calculate Emissions</button>
+            </form>
+         </div>
+      </section>
+
+
+      <script src="Scripts/script.js"></script>
+   </body>
+</html>

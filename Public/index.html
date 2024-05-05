@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Website CarbonCalculator - DigitalSearchGroup</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="shortcut icon" href="/Images/Icon - Colour.png" sizes="32x32" type="image/x-icon">
+      <link rel="stylesheet" href="style/home.css">
+   </head>
+   <body>
+      <!-- Loader -->
+      <div class="loader-container">
+         <i class="fas fa-cog loader-icon"></i>
+         <p class="loader-text loader">Scanning your website...</p>
+      </div>
+      <div class="diagonal-split-container">
+         <div class="diagonal-split-background"></div>
+         <div class="diagonal-split-content">
+            <header class="header">
+               <div class="container">
+                  <div class="logo">
+                     <img src="/Images/Landscape - White 200x80.png" alt="Logo">
+                  </div>
+                  <div class="header-content">
+                     <h1>Reduce the carbon footprint and contribute to a more sustainable ecosystem.</h1>
+                     <p class="subtitle">Enter your website address below to see how it performs:
+                     </p>
+                     <div id="errorContainer"></div>
+                     <form action="http://localhost:3000/generateReport" method="post" class="website-form" id="website-form-id">
+                        <input type="text" name="URLSearch" id="website-url" placeholder="Enter your website URL">
+                        <button type="submit">Calculate</button>
+                     </form>
+                  </div>
+               </div>
+            </header>
+         </div>
+      </div>
+
+      
+      <!-- "Why-to-calculate?" Section-->
+      <section class="why-to-calculate">
+         <div class="container">
+            <h2>Website Carbon Footprint</h2>
+            <p>Explore why calculating your website's CO2 emissions is crucial for addressing global challenges like climate change.</p>
+            <img src="Images/number-of-bytes-by-percentile-by-type-mobile.png" alt="Why Images">
+            <a href="https://almanac.httparchive.org/en/2022/sustainability#carbon-emissions" target="_blank">Learn more about carbon emissions</a>
+            <p>Discover how elements such as images and videos significantly contribute to the data transmitted over the internet, impacting energy consumption.</p>
+         </div>
+      </section>
+
+      <!-- "How-website-emit-co2?" Section -->
+      <section id="How-website-emit-co2">
+         <div id="intro">
+            <h1>How Websites Emit CO2?</h1>
+            <p>A website produces 1.76g of CO2 per visit on avg. from the processing power needed to load and deliver the page.</p>
+         </div>
+         <div class="container">
+            <div class="image-container">
+               <img src="/Images/website_emition_process.svg" alt="CO2 Emission Image">
+            </div>
+            <div class="info">
+               <h2>Data Transfer</h2>
+               <p>Sending and receiving data is energy-intensive. It needs processing power, which uses electricity and produces heat. Sadly, most of the electricity used to power the internet comes from fossil fuels, not renewables.</p>
+               <h2>Page Weight</h2>
+               <p>There are over 1.13 billion websites online! The data transmitted between your website and the user’s device travels through the internet, which requires energy. And with web pages averaging over 2MB, that’s a ton of data traveling the internet.</p>
+               <h2>Page Speed</h2>
+               <p>A slow loading website consumes more energy and produces more emissions. Every time a visitor comes to your site, it requires a lot of processing power, putting a physical strain on your server and increasing e-waste.</p>
+            </div>
+         </div>
+      </section>
+
+      <!-- "How do I check my website?" Section -->
+      <section class="check-website">
+         <div class="container">
+            <h2>How do I check my website?</h2>
+            <p>Submit your website at the top or bottom of this page and we'll do the work to figure out the impact your website are having on the environment.</p>
+            <div class="how-we-work">
+               <div class="step">
+                  <div class="icon"><i class="fas fa-globe"></i></div>
+                  <h3>Enter Your Website Address</h3>
+               </div>
+               <div class="step">
+                  <div class="icon"><i class="fas fa-calculator"></i></div>
+                  <h3>Calculate Carbon Emissions</h3>
+               </div>
+               <div class="step">
+                  <div class="icon"><i class="fas fa-chart-line"></i></div>
+                  <h3>Analyze SEO Performance</h3>
+               </div>
+               <div class="step">
+                  <div class="icon"><i class="fas fa-file-alt"></i></div>
+                  <h3>View Report</h3>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- "Calculate your emissions!" Section -->
+      <section class="calculate-emissions">
+         <div class="econtainer">
+            <h2>Calculate your website emissions!</h2>
+            <p>Start your journey towards a more sustainable future.</p>
+            <form action="/generateReport" method="post" class="website-form" id="website-form-id2">
+               <input type="text" name="URLSearch" id="website-url" placeholder="Enter your website URL">
+               <button type="submit">Calculate Emissions</button>
+            </form>
+         </div>
+      </section>
+
+     <!-- "Frequently Asked Questions?" Section -->
+      <section class="faq-section">
+         <div class="container">
+         <h2>Frequently Asked Questions</h2>
+         <div class="faq-item">
+            <h3 class="question">What is a website's carbon footprint?</h3>
+            <p class="answer">A website's carbon footprint refers to the amount of greenhouse gas emissions, particularly carbon dioxide (CO2), produced during its operation. This includes the energy used to host, deliver, and maintain the website, as well as the emissions associated with user interactions such as data transfer and device energy consumption.</p>
+         </div>
+         <div class="faq-item">
+            <h3 class="question">How does using websites contribute to carbon emissions?</h3>
+            <p class="answer">Websites require servers to host their data, which consume electricity, usually generated from fossil fuels, leading to carbon emissions. Additionally, every time a user accesses a website, data is transferred across networks, requiring energy and generating emissions, especially if the user's device is energy-intensive.</p>
+         </div>
+         <div class="faq-item">
+            <h3 class="question">Can we reduce the carbon footprint of websites?</h3>
+            <p class="answer">Yes, there are various strategies to reduce the carbon footprint of websites. These include using energy-efficient servers and data centers, optimizing website code and content for faster loading times and reduced data transfer, implementing caching mechanisms to minimize server requests, and using renewable energy sources to power servers.</p>
+         </div>
+         <div class="faq-item">
+            <h3 class="question">What is a sustainable website?</h3>
+            <p class="answer">A sustainable website is one that is designed and developed with the environment in mind, minimizing its impact on natural resources and reducing its carbon footprint. This includes practices such as using renewable energy sources and optimizing website performance.</p>
+         </div>
+         <div class="faq-item">
+            <h3 class="question">What is green hosting?</h3>
+            <p class="answer">Green hosting is web hosting that uses renewable energy sources such as wind or solar power to power their servers, reducing their carbon footprint. Some green hosting companies also engage in sustainable practices such as recycling and reducing waste.</p>
+         </div>
+      </section>
+
+
+      <!-- Footer Section -->
+      <footer class="footer">
+         <div class="container">
+            <nav>
+               <ul>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+               </ul>
+            </nav>
+            <p>&copy; 2024 CarbonCalculator. All rights reserved.</p>
+         </div>
+      </footer>
+
+      <script src="Scripts/faq.js"></script>
+      <script src="Scripts/loader.js"></script>
+   </body>
+</html>

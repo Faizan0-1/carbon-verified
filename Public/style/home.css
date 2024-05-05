@@ -1,0 +1,464 @@
+ 
+/* Import Source Sans Pro font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@500&display=swap');
+/* Resetting default margin and padding */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+/* Body styles */
+ body {
+     font-family: 'Figtree', Arial, sans-serif;
+     line-height: 1.6;
+     background-color: #E3F488;
+     color: #fff;
+}
+/* Root variables */
+ :root {
+     --bg-color-dark: #1C3F3A;
+     --bg-color-dark2: #2c4a45;
+}
+ .header {
+     position: relative;
+     z-index: 1;
+     color: #fff;
+     padding: 100px 32px;
+     text-align: center;
+     width: 100%;
+     height: 100%;
+     z-index: 111;
+}
+ .logo {
+     position: absolute;
+     top: 20px;
+     left: 20px;
+}
+ .logo img{
+     max-width: 120px;
+     height: auto;
+}
+ .header-content{
+     padding: 30px;
+}
+ .header h1 {
+     font-size: 60px;
+     margin-top: 20px;
+     margin-block: 20px;
+     line-height: 65px;
+}
+ .header .subtitle {
+     font-size: 18px;
+     color: #E3F488;
+     line-height: 40px;
+}
+ .header .website-form {
+     margin-top: 20px;
+     text-align: center;
+}
+ .header .website-form input[type="text"] {
+     padding: 10px;
+     width: 70%;
+}
+ .header .website-form button {
+     padding: 10px 20px;
+     background-color: var(--bg-color-dark);
+     color: #fff;
+     border: none;
+     cursor: pointer;
+}
+/* Background container and left/right background divs */
+ .diagonal-split-container {
+     position: relative;
+     overflow: hidden;
+     height: 100vh;
+}
+ .diagonal-split-background {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #1C3F3A;
+    /* Background color for the diagonal split */
+     clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+}
+ .diagonal-split-content {
+     position: relative;
+     z-index: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+}
+
+/* "Why Images?" Section */
+ .why-to-calculate {
+     background-color: var(--bg-color-dark2);
+     padding: 60px 32px;
+     text-align: center;
+}
+ .why-to-calculate h2 {
+     font-size: 60px;
+    /* Increased font size */
+     line-height: 40px;
+    /* Line spacing for the heading */
+     margin: 34px;
+}
+ .why-to-calculate p {
+     font-size: 28px;
+    /* Increased font size */
+     margin: 34px;
+     line-height: 40px;
+    /* Line spacing for the paragraph */
+}
+ .why-to-calculate img {
+     display: block;
+    /* Center image */
+     margin: 0 auto;
+     width: 60%;
+    /* Adjusted width of the image */
+}
+ .why-to-calculate a {
+     text-decoration: none;
+     font-size: 14px;
+    /* Increased font size */
+     margin: 34px;
+     color: #868181;
+     line-height: 40px;
+    /* Line spacing for the paragraph */
+}
+ #How-website-emit-co2 {
+     padding-top: 80px;
+     background-color: var(--bg-color-dark);
+}
+ #How-website-emit-co2 #intro {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+}
+ #How-website-emit-co2 #intro h1 {
+     font-size: 60px;
+}
+ #How-website-emit-co2 #intro p {
+     margin-top: -5px;
+     font-size: 28px;
+     max-width: 650px;
+     line-height: 40px;
+}
+ #How-website-emit-co2 .container {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: flex-start;
+     padding: 20px;
+     max-width: 1200px;
+     margin: 0 auto;
+}
+ #How-website-emit-co2 .container .info {
+     flex: 1;
+     padding: 20px;
+     min-width: 600px;
+    /* Use min-width instead of max-width */
+     margin-left: 100px;
+}
+ #How-website-emit-co2 .container .info h1 {
+     margin-top: 0;
+}
+ #How-website-emit-co2 .container .info p {
+     margin-bottom: 30px;
+     line-height: 22px;
+     font-size: 18px;
+}
+ #How-website-emit-co2 .container .image-container {
+     flex: 1;
+     text-align: center;
+     margin-top: 60px;
+     margin-left: -60PX;
+}
+ #How-website-emit-co2 .container .image-container img {
+     height: auto;
+     max-height: 400px;
+     display: block;
+     margin: 0 auto;
+}
+/* Responsive styles */
+ @media only screen and (max-width: 768px) {
+     #How-website-emit-co2{
+         display: none;
+    }
+     .header-content{
+         padding: 0px;
+    }
+     #How-website-emit-co2 .container {
+         flex-direction: column;
+         text-align: center;
+    }
+     #How-website-emit-co2 .container .info {
+         padding: 10px;
+         max-width: none;
+    }
+     #How-website-emit-co2 .container .image-container img {
+         max-height: 100%;
+    }
+     #How-website-emit-co2 .container .image-container {
+         margin-left: 0;
+        /* Remove margin on smaller screens */
+    }
+}
+/* "How do I check my website?" Section */
+ .check-website {
+     background-color: var(--bg-color-dark);
+     padding: 80px 32px;
+    /* Increased padding */
+     text-align: center;
+}
+ .check-website h2 {
+     margin: 34px;
+     font-size: 60px;
+    /* Increased font size */
+     line-height: 40px;
+    /* Line spacing for the heading */
+}
+ .check-website p {
+     font-size: 28px;
+    /* Increased font size */
+     margin-top: 20px;
+     line-height: 40px;
+    /* Line spacing for the paragraph */
+     padding: 20px 40px;
+}
+/* "Calculate your emissions!" Section */
+ .calculate-emissions {
+     background-color: var(--bg-color-dark2);
+    /* Background color from https://www.imagecarbon.com/ */
+     padding: 100px 32px;
+    /* Increased padding */
+     text-align: center;
+}
+ .calculate-emissions h2 {
+     margin-bottom: 20px;
+     font-size: 60px;
+    /* Increased font size */
+     line-height: 40px;
+    /* Line spacing for the heading */
+}
+ .calculate-emissions p {
+     font-size: 28px;
+    /* Increased font size */
+     margin-top: 20px;
+     line-height: 40px;
+    /* Line spacing for the paragraph */
+     font-weight: 100;
+}
+ .calculate-emissions .website-form input[type="text"] {
+     margin-top: 30px;
+     padding: 10px;
+     width: 50%;
+}
+ .calculate-emissions .website-form button {
+     padding: 10px 20px;
+     background-color: #E3F488;
+     color: var(--bg-color-dark);
+     border: none;
+     cursor: pointer;
+}
+/* Footer Section */
+ .footer {
+     background-color: var(--bg-color-dark);
+    /* Footer background color from https://www.imagecarbon.com/ */
+     color: #fff;
+     padding: 40px 0;
+    /* Increased padding */
+     text-align: center;
+}
+ .footer nav ul {
+     list-style: none;
+}
+ .footer nav ul li {
+     display: inline;
+     margin-right: 20px;
+}
+ .footer nav ul li a {
+     color: #fff;
+     text-decoration: none;
+}
+ .step {
+     display: flex;
+     align-items: center;
+     margin-bottom: 20px;
+     width: 35VW;
+}
+ .step .icon {
+     margin-right: 20px;
+     font-size: 20px;
+     background-color: #E3F488;
+     color: var(--bg-color-dark);
+     border-radius: 50%;
+    /* Make it circular */
+     padding: 5px 10px;
+    /* Add some padding */
+}
+ .step h3 {
+     margin-top: 0;
+     font-size: 26px;
+     font-weight: 100;
+     margin-left: 20PX;
+}
+ .how-we-work{
+     max-width: 800px;
+     margin: 30PX auto;
+     padding: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+ .faq-section {
+     background-color: var(--bg-color-dark2);
+     padding: 50px 0;
+}
+ .faq-section .container {
+     width: 80%;
+     margin: 0 auto;
+}
+ .faq-section .container h2 {
+     font-size: 60px;
+     margin: 32px;
+}
+ .faq-item {
+     margin-bottom: 20px;
+}
+ .question {
+     background-color: #f4f4f4;
+     border: none;
+     padding: 10px;
+     width: 100%;
+     text-align: left;
+     cursor: pointer;
+     outline: none;
+     color: #222;
+}
+ .answer {
+     margin-top: 10px;
+     display: none;
+}
+/* Loader container */
+ .loader-container {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent black background */
+     display: none;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+}
+ .loader-content {
+     text-align: center;
+     color: #fff;
+    /* White text color */
+}
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+    }
+     100% {
+         transform: rotate(360deg);
+    }
+}
+ .loader-icon {
+     font-size: 48px;
+     margin-bottom: 20px;
+     color: #E3F488;
+     animation: spin 2s linear infinite;
+    /* Apply spin animation */
+}
+/* Loader text */
+ .loader-text {
+     font-size: 24px;
+    /* Adjust size of the loader text */
+     margin-bottom: 20px;
+    /* Add some spacing */
+     margin-left: 10px;
+}
+/* Media Queries forMobile Screens */
+ @media only screen and (max-width: 768px) {
+     .container {
+         width: 90%;
+    }
+     .header {
+         padding: 80px 40px;
+    }
+     .header h1 {
+         font-size: 30px;
+         line-height: 30px;
+    }
+     .header .subtitle {
+         font-size: 14px;
+         line-height: 14px;
+    }
+     .header .website-form input[type="text"] {
+         width: 100%;
+    }
+     .header .website-form button[type="submit"] {
+         width: 100%;
+         margin-top: 10px;
+    }
+     .why-to-calculate, .check-website, .calculate-emissions {
+         padding: 20px 25px;
+    }
+     .why-to-calculate h2, .check-website h2, .calculate-emissions h2 {
+         font-size: 22px;
+         line-height: 42px;
+    }
+     .check-website h2{
+         font-size: 22px;
+         line-height: 42px;
+    }
+     .why-to-calculate p, .check-website p, .calculate-emissions p {
+         font-size: 16px;
+         line-height: 22px;
+    }
+     .why-to-calculate img {
+         width: 100%;
+         max-width: 400px;
+    }
+     .calculate-emissions .website-form input[type="text"] {
+         width: 100%;
+    }
+     .calculate-emissions .website-form button[type="submit"] {
+         width: 100%;
+         margin-top: 10px;
+    }
+     .footer {
+         padding: 30px 0;
+    }
+     .step {
+         width: 100%;
+    }
+     .step .icon {
+         font-size: 16px;
+    }
+     .step h3 {
+         font-size: 20px;
+    }
+     .faq-section .container h2 {
+         font-size: 18px;
+         line-height: 46px;
+    }
+     .faq-section .container h3 {
+         font-size: 16px;
+    }
+     .faq-section .container p {
+         font-size: 14px;
+    }
+     .faq-section .container {
+         padding: 20px;
+    }
+}
