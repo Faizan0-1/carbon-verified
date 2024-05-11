@@ -22,7 +22,7 @@ dotenv.config();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Things required for sending requests
 // Now you can access your environment variables like this:
@@ -34,7 +34,7 @@ const carbon_API_KEY = process.env.CARBON_API_KEY;
 
 
 // Middlewares for allowing access to CSS/JS files and body of request
-app.use(express.static(__dirname + '\\public'));
+app.use(express.static(__dirname + '/Public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -280,5 +280,5 @@ app.use((req, res, next) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log("Listening to port 3000");
+    console.log("Listening to port 3001");
 });
