@@ -21,7 +21,7 @@ This project is used by the following Technologies:
 - Express.js
 - HTML/CSS/JavaScript
 - Axios
-- Website CarbonCalculator 
+- Website CarbonCalculator API
 - Lighthouse Metrics API
 
 
@@ -34,6 +34,6 @@ This project is lisenced by [MIT](https://choosealicense.com/licenses/mit/) Lise
 ## Acknowledgements
 
 
-- Website CarbonCalculator 
+- Website CarbonCalculator API
 - Lighthouse Metrics API
 - Font Awesome
