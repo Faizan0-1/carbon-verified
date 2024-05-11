@@ -22,7 +22,7 @@ dotenv.config();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = 3001;
+const port = 3100;
 
 // Things required for sending requests
 // Now you can access your environment variables like this:
@@ -280,5 +280,5 @@ app.use((req, res, next) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log("Listening to port 3001");
+    console.log("Listening to port 3100");
 });
