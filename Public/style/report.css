@@ -92,6 +92,15 @@
      margin-bottom: 15px;
     /* Add spacing below paragraphs */
 }
+
+#website-url{
+
+    border-top:10px ;
+    border-left: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+}
+
  .Intro p a{
      font-size: 24px;
     /* Adjust font size */
@@ -552,7 +561,7 @@ td {
 .Intro p a{
     font-size: 14px;
    /* Adjust font size */
-    color: #fff;
+    color: var(--text-color-dark);
    /* Set font color */
 }
 

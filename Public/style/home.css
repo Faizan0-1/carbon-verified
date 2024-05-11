@@ -367,14 +367,26 @@
      padding: 10px;
      width: 100%;
      text-align: left;
+     display: inline-flex; /* Ensures the question and icon are in the same line */
      cursor: pointer;
      outline: none;
      color: #222;
+     justify-content: space-between;
 }
  .answer {
      margin-top: 10px;
      display: none;
+     background-color: #1C3F3A;
+     color: #E3F488;
+     transition: max-height 0.3s ease-out; /* Added transition */
+     padding: 10px;
 }
+
+.answer.show-answer {
+    max-height: 200px; /* Set a maximum height for transition */
+}
+
+
 /* Loader container */
  .loader-container {
      position: fixed;
