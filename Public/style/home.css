@@ -12,18 +12,23 @@
  body {
      font-family: 'Figtree', Arial, sans-serif;
      line-height: 1.6;
-     background-color: #E3F488;
-     color: #fff;
+     background-color: #f4f4f4;
+     color: var(--txt-color);
 }
 /* Root variables */
  :root {
-     --bg-color-dark: #1C3F3A;
-     --bg-color-dark2: #2c4a45;
+     --bg-color-dark: #FFFFFF;
+     --bg-color-dark2: #F8F9FA;
+     --txt-color : #1C3F3A;
+     --txt-color2 : #808187;
+     --btn-color : #E3F488;
+
+
 }
  .header {
      position: relative;
      z-index: 1;
-     color: #fff;
+     color: var(--txt-color);
      padding: 100px 32px;
      text-align: center;
      width: 100%;
@@ -36,7 +41,7 @@
      left: 20px;
 }
  .logo img{
-     max-width: 120px;
+     max-width: 200px;
      height: auto;
 }
  .header-content{
@@ -50,7 +55,7 @@
 }
  .header .subtitle {
      font-size: 18px;
-     color: #E3F488;
+     color: var(--txt-color);
      line-height: 40px;
 }
  .header .website-form {
@@ -63,8 +68,8 @@
 }
  .header .website-form button {
      padding: 10px 20px;
-     background-color: var(--bg-color-dark);
-     color: #fff;
+     background-color: var(--btn-color);
+     color: var(--txt-color);
      border: none;
      cursor: pointer;
 }
@@ -72,18 +77,18 @@
  .diagonal-split-container {
      position: relative;
      overflow: hidden;
-     height: 100vh;
+
 }
- .diagonal-split-background {
+ /* .diagonal-split-background {
      position: absolute;
      top: 0;
      left: 0;
      width: 100%;
      height: 100%;
-     background-color: #1C3F3A;
-    /* Background color for the diagonal split */
+     background-color: var(--bg-color-dark);
+    /* Background color for the diagonal split 
      clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
-}
+} */
  .diagonal-split-content {
      position: relative;
      z-index: 1;
@@ -98,6 +103,7 @@
      background-color: var(--bg-color-dark2);
      padding: 60px 32px;
      text-align: center;
+    
 }
  .why-to-calculate h2 {
      font-size: 60px;
@@ -105,6 +111,7 @@
      line-height: 40px;
     /* Line spacing for the heading */
      margin: 34px;
+     color: var(--txt-color);
 }
  .why-to-calculate p {
      font-size: 28px;
@@ -112,6 +119,7 @@
      margin: 34px;
      line-height: 40px;
     /* Line spacing for the paragraph */
+    color: var(--txt-color);
 }
  .why-to-calculate img {
      display: block;
@@ -125,7 +133,7 @@
      font-size: 14px;
     /* Increased font size */
      margin: 34px;
-     color: #868181;
+     color: var(--txt-color);
      line-height: 40px;
     /* Line spacing for the paragraph */
 }
@@ -186,11 +194,20 @@
 }
 /* Responsive styles */
  @media only screen and (max-width: 768px) {
+
+    /* Background container and left/right background divs */
+ .diagonal-split-container {
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+
+}
      #How-website-emit-co2{
          display: none;
     }
      .header-content{
          padding: 0px;
+         margin-top: 120px;
     }
      #How-website-emit-co2 .container {
          flex-direction: column;
@@ -203,6 +220,16 @@
      #How-website-emit-co2 .container .image-container img {
          max-height: 100%;
     }
+
+    .why-to-calculate a {
+        text-decoration: none;
+        font-size: 10px;
+       /* Increased font size */
+        margin: 34px;
+        color: var(--txt-color2);
+        line-height: 40px;
+       /* Line spacing for the paragraph */
+   }
      #How-website-emit-co2 .container .image-container {
          margin-left: 0;
         /* Remove margin on smaller screens */
@@ -213,7 +240,6 @@
      background-color: var(--bg-color-dark);
      padding: 80px 32px;
     /* Increased padding */
-     text-align: center;
 }
  .check-website h2 {
      margin: 34px;
@@ -221,6 +247,7 @@
     /* Increased font size */
      line-height: 40px;
     /* Line spacing for the heading */
+    text-align: center;
 }
  .check-website p {
      font-size: 28px;
@@ -229,6 +256,7 @@
      line-height: 40px;
     /* Line spacing for the paragraph */
      padding: 20px 40px;
+     text-align: center;
 }
 /* "Calculate your emissions!" Section */
  .calculate-emissions {
@@ -260,8 +288,8 @@
 }
  .calculate-emissions .website-form button {
      padding: 10px 20px;
-     background-color: #E3F488;
-     color: var(--bg-color-dark);
+     background-color: var(--btn-color);
+     color: var(--txt-color);
      border: none;
      cursor: pointer;
 }
@@ -269,7 +297,7 @@
  .footer {
      background-color: var(--bg-color-dark);
     /* Footer background color from https://www.imagecarbon.com/ */
-     color: #fff;
+     color: var(--txt-color);
      padding: 40px 0;
     /* Increased padding */
      text-align: center;
@@ -282,7 +310,7 @@
      margin-right: 20px;
 }
  .footer nav ul li a {
-     color: #fff;
+     color: var(--txt-color);
      text-decoration: none;
 }
  .step {
@@ -295,7 +323,7 @@
      margin-right: 20px;
      font-size: 20px;
      background-color: #E3F488;
-     color: var(--bg-color-dark);
+     color: var(--txt-color);
      border-radius: 50%;
     /* Make it circular */
      padding: 5px 10px;
@@ -306,6 +334,7 @@
      font-size: 26px;
      font-weight: 100;
      margin-left: 20PX;
+     color: var(--txt-color);
 }
  .how-we-work{
      max-width: 800px;
@@ -315,6 +344,7 @@
      align-items: center;
      justify-content: center;
      flex-direction: column;
+     text-align: center;
 }
  .faq-section {
      background-color: var(--bg-color-dark2);
@@ -361,7 +391,7 @@
 }
  .loader-content {
      text-align: center;
-     color: #fff;
+     color: var(--bg-color-dark);
     /* White text color */
 }
  @keyframes spin {
@@ -375,7 +405,7 @@
  .loader-icon {
      font-size: 48px;
      margin-bottom: 20px;
-     color: #E3F488;
+     color: var(--btn-color);
      animation: spin 2s linear infinite;
     /* Apply spin animation */
 }
@@ -386,6 +416,7 @@
      margin-bottom: 20px;
     /* Add some spacing */
      margin-left: 10px;
+     color: #FFFFFF;
 }
 /* Media Queries forMobile Screens */
  @media only screen and (max-width: 768px) {
@@ -393,40 +424,57 @@
          width: 90%;
     }
      .header {
-         padding: 80px 40px;
+         padding: 20px 40px;
     }
      .header h1 {
-         font-size: 30px;
-         line-height: 30px;
+         font-size: 24px;
+         line-height: 32px;
     }
      .header .subtitle {
-         font-size: 14px;
+         font-size: 8px;
          line-height: 14px;
+         color: var(--txt-color2);
     }
      .header .website-form input[type="text"] {
          width: 100%;
     }
      .header .website-form button[type="submit"] {
          width: 100%;
-         margin-top: 10px;
+         margin-top: 4px;
+         background-color: #E3F488;
+         color: #1C3F3A;
     }
+
+    .how-we-work{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0px 0px;
+   }
      .why-to-calculate, .check-website, .calculate-emissions {
-         padding: 20px 25px;
+         padding: 35px 25px;
     }
      .why-to-calculate h2, .check-website h2, .calculate-emissions h2 {
-         font-size: 22px;
-         line-height: 42px;
+         font-size: 15px;
+         line-height: 25px;
+         text-align: center;
     }
      .check-website h2{
-         font-size: 22px;
-         line-height: 42px;
+         font-size: 15px;
+         line-height: 25px;
     }
      .why-to-calculate p, .check-website p, .calculate-emissions p {
-         font-size: 16px;
-         line-height: 22px;
+         font-size: 12px;
+         line-height: 14px;
+         text-align: center;
+         margin-top: -10px;
+         padding: 0 0px;
+         margin-left: 0px;
+         margin-right: 0px;
     }
      .why-to-calculate img {
-         width: 100%;
+         width: 70%;
          max-width: 400px;
     }
      .calculate-emissions .website-form input[type="text"] {
@@ -437,28 +485,44 @@
          margin-top: 10px;
     }
      .footer {
-         padding: 30px 0;
+         padding: 30px 30px;
     }
+    .footer p{
+
+        font-size: 12px;
+   }
+
+   .footer a{
+
+    font-size: 12px;
+}
      .step {
          width: 100%;
+         margin-bottom: 15px;
     }
      .step .icon {
-         font-size: 16px;
+         font-size: 12px;
+         padding: 4px 6px;
     }
      .step h3 {
-         font-size: 20px;
+         font-size: 16px;
     }
      .faq-section .container h2 {
          font-size: 18px;
-         line-height: 46px;
+         line-height: 28px;
+         margin-bottom: 20px;
+         margin-top: 0;
+         margin-left: 0;
+         margin-right: 0;
+         text-align: center;
     }
      .faq-section .container h3 {
-         font-size: 16px;
+         font-size: 12px;
     }
      .faq-section .container p {
-         font-size: 14px;
-    }
+         font-size: 10px;
+    } 
      .faq-section .container {
-         padding: 20px;
+         padding: 0px;
     }
 }
