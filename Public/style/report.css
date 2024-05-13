@@ -104,7 +104,7 @@
  .Intro p a{
      font-size: 24px;
     /* Adjust font size */
-     color: #fff;
+     color: var(--text-color-dark);
     /* Set font color */
 }
 /* Code Container */

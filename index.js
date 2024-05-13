@@ -191,8 +191,6 @@ app.post('/generateReport', async (req, res, next) => {
 
     // Check if the URL is empty or missing 'http://' or 'https://'
     if (!SearchURL) {
-
-
         throw new Error('Empty URL provided');
     } else {
         // Prepend 'http://' if the URL does not start with it

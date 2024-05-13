@@ -12,7 +12,7 @@
  body {
      font-family: 'Figtree', Arial, sans-serif;
      line-height: 1.6;
-     background-color: #f4f4f4;
+     background-color: #FFFFFF;
      color: var(--txt-color);
 }
 /* Root variables */
@@ -100,7 +100,7 @@
 
 /* "Why Images?" Section */
  .why-to-calculate {
-     background-color: var(--bg-color-dark2);
+     background-color: var(--bg-color-dark);
      padding: 60px 32px;
      text-align: center;
     
@@ -137,6 +137,31 @@
      line-height: 40px;
     /* Line spacing for the paragraph */
 }
+
+.why-container{
+    display: grid;
+    column-gap: 100px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(min-content, max-content);
+    z-index: 1;
+    position: relative;
+}
+
+.why-container .right p{
+   font-size: 16px;
+   line-height: 26px;
+   color: var(--txt-color2);
+}
+
+
+.why-container .left h2{
+    font-size: 45px;
+    line-height: 52.6px;
+    color: var(--txt-color);
+    margin-left: -5px;
+    font-weight: 300;
+ }
+
  #How-website-emit-co2 {
      padding-top: 80px;
      background-color: var(--bg-color-dark);
@@ -260,7 +285,7 @@
 }
 /* "Calculate your emissions!" Section */
  .calculate-emissions {
-     background-color: var(--bg-color-dark2);
+     background-color: var(--bg-color-dark);
     /* Background color from https://www.imagecarbon.com/ */
      padding: 100px 32px;
     /* Increased padding */
@@ -333,7 +358,7 @@
      margin-top: 0;
      font-size: 26px;
      font-weight: 100;
-     margin-left: 20PX;
+     margin-left: 2PX;
      color: var(--txt-color);
 }
  .how-we-work{
@@ -347,7 +372,7 @@
      text-align: center;
 }
  .faq-section {
-     background-color: var(--bg-color-dark2);
+     background-color: var(--bg-color-dark);
      padding: 50px 0;
 }
  .faq-section .container {
@@ -377,7 +402,7 @@
      margin-top: 10px;
      display: none;
      background-color: #1C3F3A;
-     color: #E3F488;
+     color: var(--bg-color-dark2);
      transition: max-height 0.3s ease-out; /* Added transition */
      padding: 10px;
 }
@@ -434,6 +459,7 @@
  @media only screen and (max-width: 768px) {
      .container {
          width: 90%;
+         margin: auto;
     }
      .header {
          padding: 20px 40px;
@@ -514,7 +540,9 @@
     }
      .step .icon {
          font-size: 12px;
-         padding: 4px 6px;
+         padding: 6px 10px;
+         border-radius: 50%;
+
     }
      .step h3 {
          font-size: 16px;
