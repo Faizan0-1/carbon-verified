@@ -461,6 +461,10 @@
          width: 90%;
          margin: auto;
     }
+    section{
+
+        margin-bottom: 20px;
+    }
      .header {
          padding: 20px 40px;
     }
@@ -491,28 +495,35 @@
         padding: 0px 0px;
    }
      .why-to-calculate, .check-website, .calculate-emissions {
-         padding: 35px 25px;
+        margin-top: -65px;
+         padding: 25px 25px;
+    }
+    .calculate-emissions{
+
+        margin-top: -45px;
     }
      .why-to-calculate h2, .check-website h2, .calculate-emissions h2 {
-         font-size: 15px;
+         font-size: 23px;
+         font-weight: 500;
          line-height: 25px;
          text-align: center;
-    }
-     .check-website h2{
-         font-size: 15px;
-         line-height: 25px;
-    }
+         letter-spacing: -0.03em;
+         
+         
+     }
+  
      .why-to-calculate p, .check-website p, .calculate-emissions p {
-         font-size: 12px;
-         line-height: 14px;
+         font-size: 14px;
+         line-height: 20px;
          text-align: center;
          margin-top: -10px;
          padding: 0 0px;
          margin-left: 0px;
          margin-right: 0px;
+         color: var(--txt-color2);
     }
      .why-to-calculate img {
-         width: 70%;
+         width: 85%;
          max-width: 400px;
     }
      .calculate-emissions .website-form input[type="text"] {
@@ -539,13 +550,13 @@
          margin-bottom: 15px;
     }
      .step .icon {
-         font-size: 12px;
-         padding: 6px 10px;
+         font-size: 10px;
+         padding: 4px 8px;
          border-radius: 50%;
 
     }
      .step h3 {
-         font-size: 16px;
+         font-size: 14px;
     }
      .faq-section .container h2 {
          font-size: 18px;
@@ -557,10 +568,14 @@
          text-align: center;
     }
      .faq-section .container h3 {
-         font-size: 12px;
+         font-size: 16px;
+         line-height: 20px;
+         font-weight: 500;
     }
      .faq-section .container p {
-         font-size: 10px;
+         font-size: 14px;
+         line-height: 18px;
+         margin: auto;
     } 
      .faq-section .container {
          padding: 0px;
